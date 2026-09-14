@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { siteConfig } from "@/lib/portfolio";
 import { motion } from "framer-motion";
+import { Cossette_Texte } from "next/font/google";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.checkValidity()) {
@@ -15,12 +16,28 @@ export function Contact() {
       return;
     }
     setStatus("submitting");
-    // Simulate async — replace with real handler (e.g., Formspree, Resend, server action)
-    setTimeout(() => {
-      setStatus("success");
-      form.reset();
-      setTimeout(() => setStatus("idle"), 4000);
-    }, 800);
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", "8073dd5e-d5da-4218-8ef1-bf48ce5e56d9");
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus("success");
+        form.reset();
+
+        setTimeout(() => setStatus("idle"), 3000);
+      } else {
+        setStatus("idle");
+        alert(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("idle");
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -241,20 +258,12 @@ export function Contact() {
                   aria-live="polite"
                   className="mt-4 border-2 border-accent bg-accent/10 px-4 py-3 text-sm font-bold"
                 >
-                  Thanks — I&apos;ll get back to you soon! (Demo: no email sent — wire up a
-                  backend when ready.)
+                  Thanks — I&apos;ll get back to you soon!
                 </motion.p>
               )}
             </form>
 
-            <p className="mt-8 text-xs text-muted-foreground border-l-2 border-accent pl-4">
-              Form is validation-ready. Connect to Formspree, Resend, or a Next.js server action.
-              Contact links above are configurable via{" "}
-              <code className="bg-muted border border-border px-1 py-0.5 font-mono">
-                lib/portfolio.ts
-              </code>
-              .
-            </p>
+
           </div>
         </div>
       </div>

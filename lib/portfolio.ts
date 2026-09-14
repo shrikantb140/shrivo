@@ -1,5 +1,4 @@
-// Centralized portfolio configuration
-// DO NOT invent URLs — replace placeholders with real values when available
+
 
 export const siteConfig = {
   name: "Shrikant Bhojane",
@@ -10,15 +9,15 @@ export const siteConfig = {
   focus: "Frontend / Web Development",
   goal: "Full-Stack Developer",
   location: "Pune, India",
-  // Configurable URLs — replace with real values
-  resumeUrl: "#", // e.g. "/resume.pdf" or external URL
-  email: "hello@shrikantbhojane.dev", // placeholder — replace with real
-  phone: "+91 00000 00000", // placeholder — replace with real
+
+  resumeUrl: "https://filebin.net/pybadmeek4f3yqwu/SHRIKANT-BHOJANE-RESUME.pdf", 
+  email: "shrikantbhojane50@gmail.com", 
+  phone: "+91 7758059588", 
   social: {
-    github: "https://github.com/", // placeholder
-    linkedin: "https://linkedin.com/in/", // placeholder
-    instagram: "https://instagram.com/", // placeholder
-    twitter: "https://x.com/", // placeholder - X / Twitter
+    github: "https://github.com/", 
+    linkedin: "https://linkedin.com/in/", 
+    instagram: "https://instagram.com/", 
+    twitter: "https://x.com/", 
   },
 } as const;
 
@@ -26,7 +25,7 @@ export const education = {
   degree: "Computer Science",
   university: "Savitribai Phule Pune University",
   year: "2026",
-  status: "Pursuing — Expected 2026",
+  status: "pursued B.Sc in Computer Science",
 } as const;
 
 export const navigationLinks = [
