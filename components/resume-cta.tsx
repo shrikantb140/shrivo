@@ -68,10 +68,7 @@ export function ResumeCta() {
             >
               View Selected Work
             </a>
-            <p className="text-xs font-bold tracking-widest uppercase opacity-70 text-center">
-              PDF — Update path in{" "}
-              <code className="bg-background/20 px-1 py-0.5">lib/portfolio.ts</code>
-            </p>
+           
           </motion.div>
         </div>
 

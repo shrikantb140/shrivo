@@ -170,10 +170,6 @@ export function Projects() {
         </div>
 
         <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-2 border-border p-4 md:p-6 bg-muted/20">
-          <p className="text-sm font-medium text-muted-foreground max-w-2xl">
-            These are structured placeholders — swap in real project data, screenshots, GitHub and
-            live URLs via <code className="bg-background border border-border px-1 py-0.5 font-mono text-xs">lib/portfolio.ts</code>. No fabricated links.
-          </p>
           <a
             href="#contact"
             className="shrink-0 inline-flex h-11 items-center justify-center border-2 border-foreground bg-foreground text-background px-6 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"

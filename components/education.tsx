@@ -89,9 +89,7 @@ export function Education() {
               </div>
             </div>
 
-            <p className="mt-6 text-sm text-muted-foreground">
-              No fabricated grades, scores, or certifications — verified academic details only.
-            </p>
+       
           </div>
 
           {/* Right poster */}

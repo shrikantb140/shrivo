@@ -67,11 +67,10 @@ export function Skills() {
                     <span className="text-accent">◆</span> {group.title}
                   </h3>
                   <span
-                    className={`text-[10px] font-bold tracking-[0.18em] uppercase px-2 py-1 border ${
-                      group.variant === "core"
-                        ? "bg-accent text-accent-foreground border-accent"
-                        : "bg-transparent text-muted-foreground border-border"
-                    }`}
+                    className={`text-[10px] font-bold tracking-[0.18em] uppercase px-2 py-1 border ${group.variant === "core"
+                      ? "bg-accent text-accent-foreground border-accent"
+                      : "bg-transparent text-muted-foreground border-border"
+                      }`}
                   >
                     {group.label}
                   </span>
@@ -98,9 +97,8 @@ export function Skills() {
 
                       <span className="flex items-center gap-3">
                         <span
-                          className={`hidden md:inline text-xs font-bold tracking-widest uppercase opacity-60 group-hover:opacity-100 ${
-                            group.variant === "core" ? "" : "italic"
-                          }`}
+                          className={`hidden md:inline text-xs font-bold tracking-widest uppercase opacity-60 group-hover:opacity-100 ${group.variant === "core" ? "" : "italic"
+                            }`}
                         >
                           {group.variant === "core" ? "CORE" : "LEARNING"}
                         </span>
@@ -121,11 +119,7 @@ export function Skills() {
             ))}
           </div>
 
-          {/* Bottom note */}
-          <p className="mt-4 text-xs md:text-sm text-muted-foreground max-w-3xl">
-            Proficiency varies — core skills are used daily; full-stack items are actively being
-            strengthened through projects and freelance work.
-          </p>
+
         </div>
       </div>
 
